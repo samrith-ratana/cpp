@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f9f3e9">
   <meta name="color-scheme" content="light">
-  <meta name="description" content="លិខិតអញ្ជើញពិធីអាពាហ៍ពិពាហ៍ Ratana & Rotha ថ្ងៃទី២៥ ខែមករា ឆ្នាំ២០២៧។">
+  <meta name="description" content="លិខិតអញ្ជើញពិធីអាពាហ៍ពិពាហ៍ សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា ថ្ងៃទី២៥ ខែមករា ឆ្នាំ២០២៧។">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="សំរិទ្ធ រតនា & រាជ្យ ពៅរដ្ឋា — Wedding Invitation">
+  <meta property="og:title" content="សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា — លិខិតអញ្ជើញមង្គលការ">
   <meta property="og:description" content="សូមគោរពអញ្ជើញចូលរួមពិធីមង្គលការ • 25 January 2027">
-  <title>លិខិតអញ្ជើញអាពាហ៍ពិពាហ៍ | Ratana & Rotha</title>
+  <title>លិខិតអញ្ជើញអាពាហ៍ពិពាហ៍ | សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -295,12 +295,101 @@
       .gallery-grid.visible .photo-button:nth-child(2),.gallery-grid.visible .photo-button:nth-child(5){transform:none!important}
       .program-card,.btn{transition:none}
     }
+
+    /* KHMER NAMES · correct glyph shaping, breathing room, preserved gold shimmer */
+    .topbar .brand{font-family:var(--kh);font-style:normal;font-size:clamp(17px,2.5vw,23px);font-weight:700;letter-spacing:0;white-space:nowrap;line-height:1.8}
+    .names.khmer-names{font-family:'Noto Serif Khmer','Battambang',serif;font-size:clamp(35px,5.5vw,67px);font-weight:700;line-height:1.8;transform:none;margin:0 0 14px;letter-spacing:0;overflow:visible}
+    .names.khmer-names .groom,.names.khmer-names .bride{line-height:1.8;max-width:100%;padding:0;margin-inline:auto;white-space:nowrap}
+    .names.khmer-names .amp{font-family:var(--serif);font-style:italic;font-weight:500;font-size:.78em;line-height:.66;margin:-18px auto -11px;position:relative;z-index:2}
+    .footer .names-mini.khmer-names-mini{font-family:'Noto Serif Khmer','Battambang',serif;font-size:clamp(25px,4.8vw,47px);font-weight:700;line-height:2.1;margin:5px 0;white-space:normal;overflow-wrap:normal}
+    .footer .names-mini.khmer-names-mini span{font-family:var(--serif);font-style:italic;font-size:1.15em}
+    .photo-ribbon span{font-family:var(--kh);font-style:normal;font-size:16px;letter-spacing:0;font-weight:700;line-height:1.8}
+    .gold-crest{font-family:var(--kh);font-style:normal;letter-spacing:0;line-height:1.8;font-size:16px}
+    @media(max-width:600px){
+      .topbar .brand{font-size:clamp(15px,4vw,18px)}
+      .names.khmer-names{font-size:clamp(29px,7.9vw,42px);line-height:1.7;margin:3px 0 12px}
+      .names.khmer-names .groom,.names.khmer-names .bride{line-height:1.75}
+      .names.khmer-names .amp{margin:-11px auto -8px;line-height:.7}
+      .footer .names-mini.khmer-names-mini{font-size:clamp(24px,6.8vw,34px);line-height:2}
+      .photo-ribbon span{font-size:11px}
+      .gold-crest{font-size:11px}
+    }
+    @media(max-width:360px){.topbar .brand{font-size:14px}.names.khmer-names{font-size:28px}}
+
+    /* FULL KHMER NAMES — fitted layout on narrow devices */
+    .names.khmer-names{font-size:clamp(27px,3.9vw,49px);line-height:1.65;margin:8px 0 20px}
+    .names.khmer-names .groom,.names.khmer-names .bride{line-height:1.82;overflow:visible;white-space:normal;text-wrap:balance}
+    .names.khmer-names .amp{font-size:1.06em;line-height:.9;margin:-3px auto -5px}
+    .footer .names-mini.khmer-names-mini{font-size:clamp(26px,4vw,44px);line-height:1.8}
+    .footer .names-mini.khmer-names-mini .full-name{display:block;font-family:var(--kh);font-size:1em;font-style:normal;line-height:2.0}
+    .footer .names-mini.khmer-names-mini .amp{display:block;font-family:var(--serif);font-size:1.1em;line-height:.85}
+    @media (max-width:600px){
+      .topbar{justify-content:center;padding:8px 14px}
+      .topbar .brand{font-size:clamp(12px,3.2vw,16px);white-space:normal;text-align:center;line-height:2}
+      .topbar .mini{display:none}
+      .hero-grid{grid-template-columns:minmax(0,1fr);gap:27px;padding-right:0}
+      .hero-photo-wrap{width:min(83%,385px);margin-inline:auto;padding:7px 10px 10px 2px}
+      .hero-photo{height:clamp(310px,105vw,440px)}
+      .hero-copy{width:100%;padding:4px 6px 0;margin-inline:auto}
+      .kh-hero{font-size:clamp(20px,5vw,28px)}
+      .en-sub{font-size:clamp(12px,3.1vw,16px);margin:0 auto 14px}
+      .names.khmer-names{font-size:clamp(27px,7.5vw,39px);margin:10px auto 20px;max-width:100%}
+      .names.khmer-names .groom,.names.khmer-names .bride{line-height:1.9;white-space:normal}
+      .names.khmer-names .amp{margin:-8px auto -6px}
+      .hero-date-label{margin-top:14px}
+      .hero-date-kh{max-width:none}
+      .butterfly{width:clamp(90px,24vw,126px);right:0;bottom:-20px}
+      .footer .names-mini.khmer-names-mini{font-size:clamp(27px,7.5vw,38px)}
+    }
+    @media (max-width:360px){
+      .hero-grid{grid-template-columns:minmax(0,1fr)}
+      .names.khmer-names{font-size:clamp(25px,7.3vw,29px)}
+    }
+
+    /* MOBILE READABILITY — slightly larger Khmer typography, same luxury gold layout */
+    @media (max-width:600px){
+      .topbar .brand{font-size:clamp(14px,3.65vw,18px);line-height:1.95}
+      .kh-hero{font-size:clamp(22px,5.65vw,30px);line-height:2.05}
+      .en-sub{font-size:clamp(13px,3.4vw,17px)}
+      .names.khmer-names{font-size:clamp(30px,8.6vw,44px);line-height:1.8}
+      .names.khmer-names .groom,.names.khmer-names .bride{line-height:1.85}
+      .hero-date-label{font-size:10px;letter-spacing:.05em}
+      .hero-date{font-size:clamp(32px,8vw,46px)}
+      .hero-date-kh{font-size:13px;line-height:1.9}
+      .scroll-cue{font-size:14px}
+      .section-h{font-size:clamp(26px,6.55vw,35px);line-height:2.0}
+      .section-label{font-size:12px}
+      .invite-text{font-size:16px;line-height:2.22}
+      .invite-highlight{font-size:clamp(18px,4.8vw,21px);line-height:2.25}
+      .invite-highlight .kh-and{font-size:17px}
+      .event-date .meta{font-size:15px;line-height:1.95}
+      .location-title{font-size:17px;line-height:2}
+      .qr-panel p{font-size:12px;line-height:1.6}
+      .map-caption{font-size:12px;line-height:1.5}
+      .buttons .btn{font-size:14px}
+      .blessing h2{font-size:clamp(25px,6.4vw,34px);line-height:2.1}
+      .blessing .message{font-size:16px;max-width:355px;line-height:2.18}
+      .schedule-intro{font-size:16px;line-height:2.1}
+      .program-card h3{font-size:14px;line-height:1.85}
+      .program-card p{font-size:11px}
+      .schedule-note{font-size:12px;line-height:1.85}
+      .gallery-intro{font-size:15px}
+      .count-item span{font-size:12px}
+      .footer .names-mini.khmer-names-mini{font-size:clamp(30px,8.2vw,42px)}
+      .footer .closing{font-size:16px;line-height:2}
+      .bottom-nav a{font-size:12px}
+    }
+    @media (max-width:360px){
+      .names.khmer-names{font-size:clamp(30px,8.2vw,33px)}
+      .tape{padding-inline:17px}
+      .program-card{padding-inline:5px}
+    }
   </style>
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <header class="topbar" id="top">
-    <a class="brand" href="#top" aria-label="Wedding invitation home">Ratana <span style="color:var(--gold)">&amp;</span> Rotha</a>
+    <a class="brand" href="#top" aria-label="លិខិតអញ្ជើញមង្គលការ សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា">សំរិទ្ធ រតនា <span style="color:var(--gold)">&amp;</span> រាជ្យ ពៅរដ្ឋា</a>
     <div class="mini">ថ្ងៃពិសេសរបស់យើង</div>
   </header>
 
@@ -312,16 +401,16 @@
       <div class="hero-grid">
         <div class="hero-photo-wrap" data-reveal>
           <span class="frame-corner tl" aria-hidden="true">✧</span><span class="frame-corner br" aria-hidden="true">✧</span>
-          <img class="hero-photo" src="assets/couple-main.svg" width="820" height="1050" alt="កន្លែងសម្រាប់រូបថតអនុស្សាវរីយ៍របស់ Ratana និង Rotha" fetchpriority="high">
-          <div class="photo-ribbon" aria-hidden="true"><span>R <i>✦</i> R</span><small>EST. 25 JAN 2027</small></div>
+          <img class="hero-photo" src="assets/couple-main.svg" width="820" height="1050" alt="កន្លែងសម្រាប់រូបថតអនុស្សាវរីយ៍របស់ សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា" fetchpriority="high">
+          <div class="photo-ribbon" aria-hidden="true"><span>រ <i>✦</i> រ</span><small>EST. 25 JAN 2027</small></div>
         </div>
         <div class="hero-copy" data-reveal>
           <div class="hero-float" aria-hidden="true"></div>
-          <div class="gold-crest" aria-hidden="true"><span>✦</span> R &amp; R <span>✦</span></div>
+          <div class="gold-crest" aria-hidden="true"><span>✦</span> រ &amp; រ <span>✦</span></div>
           <h1 class="kh-hero" id="heroTitle">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
           <p class="en-sub">The Wedding Celebration</p>
           <div class="fine-line" aria-hidden="true">❧</div>
-          <p class="names" aria-label="Ratana and Rotha"><span class="groom">Ratana</span><span class="amp">&amp;</span><span class="bride">Rotha</span></p>
+          <p class="names khmer-names" aria-label="សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា"><span class="groom">សំរិទ្ធ រតនា</span><span class="amp">&amp;</span><span class="bride">រាជ្យ ពៅរដ្ឋា</span></p>
           <p class="hero-date-label">Together, a beautiful beginning</p>
           <p class="hero-date">25 · 01 · 2027</p>
           <p class="hero-date-kh">ថ្ងៃចន្ទ ទី២៥ ខែមករា ឆ្នាំ២០២៧</p>
@@ -347,10 +436,10 @@
           </div>
           <h3 class="location-title">ទីតាំងប្រារព្ធពិធីមង្គលការ</h3>
           <div class="map-grid">
-            <div class="qr-panel"><img src="assets/venue-qr.png" alt="QR សម្រាប់តំណ Google Maps" width="320" height="320" loading="lazy"><p>ស្កេន QR ដើម្បីមើលទីតាំង</p></div>
+            <div class="qr-panel"><a href="https://maps.app.goo.gl/Qxw7Dxe6UG6ynp3A6" target="_blank" rel="noopener noreferrer" aria-label="បើកទីតាំង Google Maps"><img src="assets/venue-qr.png" alt="QR សម្រាប់តំណ Google Maps" width="320" height="320" loading="lazy"></a><p>ស្កេន QR ដើម្បីមើលទីតាំង</p></div>
             <div class="map-panel" role="img" aria-label="ផែនទីតុបតែង មិនមែនជាផែនទីទីតាំងពិត"><div class="map-caption">ចុចប៊ូតុងខាងក្រោម ដើម្បីមើលទីតាំងពិត</div></div>
           </div>
-          <div class="buttons"><a class="btn" id="mapLink" href="https://maps.app.goo.gl/rp2ThMDohe" target="_blank" rel="noopener noreferrer">បើក Google Maps <span aria-hidden="true">↗</span></a><button class="btn secondary" id="calendarButton" type="button">បន្ថែមទៅប្រតិទិន</button></div>
+          <div class="buttons"><a class="btn" id="mapLink" href="https://maps.app.goo.gl/Qxw7Dxe6UG6ynp3A6" target="_blank" rel="noopener noreferrer">បើក Google Maps <span aria-hidden="true">↗</span></a><button class="btn secondary" id="calendarButton" type="button">បន្ថែមទៅប្រតិទិន</button></div>
         </div>
         <div class="polaroids" data-reveal aria-label="Wedding photo collage">
           <button class="polaroid one" type="button" data-photo="assets/couple-1.svg" data-caption="Our favorite moments" aria-label="បើករូបថតទី១"><img src="assets/couple-1.svg" alt="កន្លែងដាក់រូបថតទី១" loading="lazy"><figcaption>Sweet moments</figcaption></button>
@@ -418,7 +507,7 @@
 
   <footer class="footer">
     <p class="section-label">With all our love</p>
-    <p class="names-mini">Ratana &amp; Rotha</p>
+    <p class="names-mini khmer-names-mini"><span class="full-name">សំរិទ្ធ រតនា</span><span class="amp">&amp;</span><span class="full-name">រាជ្យ ពៅរដ្ឋា</span></p>
     <p class="closing">សូមអរគុណចំពោះក្តីស្រឡាញ់ ពាក្យជូនពរ និងវត្តមានដ៏ថ្លៃថ្លារបស់លោកអ្នក។ <span class="heart">♥</span></p>
     <div class="footer-actions"><button type="button" id="shareButton" class="btn">ចែករំលែកលិខិតអញ្ជើញ</button><a class="btn secondary" href="#top">ត្រឡប់ទៅខាងលើ ↑</a></div>
     <small>25 JANUARY 2027 · MADE WITH LOVE</small>
@@ -428,7 +517,7 @@
     <a href="#top">⌂ <span>ដើម</span></a>
     <a href="#program">✧ <span>កម្មវិធី</span></a>
     <a href="#gallery">♡ <span>រូបថត</span></a>
-    <a class="nav-gold" href="https://maps.app.goo.gl/rp2ThMDohe" target="_blank" rel="noopener noreferrer">⌖ <span>ទីតាំង</span></a>
+    <a class="nav-gold" href="https://maps.app.goo.gl/Qxw7Dxe6UG6ynp3A6" target="_blank" rel="noopener noreferrer">⌖ <span>ទីតាំង</span></a>
   </nav>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="មើលរូបថត" hidden><button id="closeLightbox" type="button" aria-label="បិទរូបថត">×</button><div><img id="lightboxImage" src="assets/couple-1.svg" alt="Wedding photo"><p id="lightboxCaption"></p></div></div>
@@ -439,7 +528,7 @@
     // CUSTOMIZE: Wedding starts on this date. Midnight is used because no ceremony time was provided.
     // Cambodia is UTC+07:00. Please verify your Google Maps link before publishing.
     const WEDDING_DATE = '2027-01-25T00:00:00+07:00';
-    const MAP_URL = 'https://maps.app.goo.gl/rp2ThMDohe';
+    const MAP_URL = 'https://maps.app.goo.gl/Qxw7Dxe6UG6ynp3A6';
     const $ = selector => document.querySelector(selector);
 
 
@@ -521,7 +610,7 @@
       clearTimeout(toastTimeout);toastTimeout = setTimeout(()=>toast.hidden=true,3000);
     }
     async function shareWedding() {
-      const shareData = {title: 'Ratana & Rotha — Wedding Invitation',text:'សូមគោរពអញ្ជើញចូលរួមពិធីមង្គលការ ថ្ងៃទី២៥ ខែមករា ឆ្នាំ២០២៧',url:location.href};
+      const shareData = {title: 'សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា — លិខិតអញ្ជើញមង្គលការ',text:'សូមគោរពអញ្ជើញចូលរួមពិធីមង្គលការ ថ្ងៃទី២៥ ខែមករា ឆ្នាំ២០២៧',url:location.href};
       try {
         if (navigator.share && /^https?:$/.test(location.protocol)) {await navigator.share(shareData);return;}
         if (navigator.clipboard && window.isSecureContext) {await navigator.clipboard.writeText(location.href);showToast('បានចម្លងតំណលិខិតអញ្ជើញ!');return;}
@@ -536,7 +625,7 @@
         'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Wedding Invitation//KH//EN','CALSCALE:GREGORIAN',
         'BEGIN:VEVENT','UID:ratana-rotha-wedding-20270125@example.invalid',
         'DTSTAMP:20261027T000000Z','DTSTART;VALUE=DATE:20270125','DTEND;VALUE=DATE:20270126',
-        'SUMMARY:Ratana & Rotha - Wedding',
+        'SUMMARY:ពិធីមង្គលការ សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា',
         'DESCRIPTION:Wedding invitation. Confirm ceremony time before attending. Map: '+MAP_URL,
         'URL:'+MAP_URL,'END:VEVENT','END:VCALENDAR',''
       ].join('\r\n');
