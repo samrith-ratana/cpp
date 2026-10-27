@@ -1,233 +1,300 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Customer Service Request</title>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#f5f0e7" name="theme-color"/>
+<meta content="Wedding invitation of រតនា &amp; ពៅរដ្ឋា — 25 January 2027." name="description"/>
+<meta content="website" property="og:type"/><meta content="រតនា &amp; ពៅរដ្ឋា — Wedding Invitation" property="og:title"/><meta content="You are invited to our wedding on 25 January 2027." property="og:description"/><meta content="images/hero.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💍%3C/text%3E%3C/svg%3E" rel="icon"/>
+<title>សំរិទ្ធ រតនា &amp; រាជ្យ ពៅរដ្ឋា | Wedding Invitation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Kantumruy+Pro:wght@400;500;600;700&amp;family=Moul&amp;display=swap" rel="stylesheet"/>
 <style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    background: #f8fafc;
-    color: #182231;
-    margin: 0;
-    min-height: 100dvh;
-    display: grid;
-    place-items: center;
-    padding: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 500px;
-    background: white;
-    padding: 32px;
-    border: 1px solid #e6ebf1;
-    border-radius: 24px;
-    box-shadow: 0 16px 52px rgba(29,40,58,.06);
-}
-
-h1 {
-    font-size: 28px;
-    margin: 0 0 10px;
-}
-
-p {
-    color: #64748b;
-    line-height: 1.6;
-}
-
-label {
-    display: block;
-    font-weight: 600;
-    margin: 18px 0 8px;
-}
-
-input, select, textarea {
-    width: 100%;
-    border: 1px solid #d8e0e9;
-    border-radius: 12px;
-    padding: 13px;
-    font: inherit;
-    background: white;
-    color: #182231;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #3982e8;
-    box-shadow: 0 0 0 3px rgba(57,130,232,.13);
-}
-
-textarea {
-    resize: vertical;
-    min-height: 115px;
-}
-
-button {
-    margin-top: 22px;
-    width: 100%;
-    padding: 15px;
-    border: 0;
-    border-radius: 12px;
-    background: #1863ca;
-    color: white;
-    font-weight: 700;
-    font: inherit;
-    cursor: pointer;
-}
-
-button:disabled {
-    opacity: .6;
-    cursor: wait;
-}
-
-#status {
-    min-height: 22px;
-    margin-top: 16px;
-}
-
-.success { color: #157347; }
-.error { color: #b42318; }
-
-.hidden-field {
-    position: absolute;
-    left: -10000px;
-    height: 1px;
-    overflow: hidden;
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 24px;
-    }
-}
+    :root { color-scheme:light; --bg:#f6f2e9; --paper:#fffdf9; --green:#173e37; --green2:#285b50; --gold:#a57a36; --line:rgba(23,62,55,.17); --ink:#283a34; --muted:#75817a; --shadow:0 22px 65px rgba(37,50,41,.11); }
+    * {box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:'Kantumruy Pro',sans-serif} button,input,select{font:inherit} a{color:inherit;text-decoration:none} button{cursor:pointer} img{max-width:100%;display:block} ::selection{background:#e5c98f;color:#193e36}
+    body.dark {color-scheme:dark;--bg:#0d1d1b;--paper:#172c28;--green:#e9dfc5;--green2:#e0c78e;--gold:#dec18a;--ink:#f0ebde;--muted:#b6beb7;--line:rgba(235,224,195,.19);--shadow:0 22px 65px rgba(0,0,0,.28)}
+    .topbar{position:fixed;inset:0 0 auto;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+    .top-inner{max-width:1160px;margin:auto;min-height:66px;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;letter-spacing:.025em;color:var(--green);white-space:nowrap}.brand span{color:var(--gold);font-style:italic}.desktop-nav{display:flex;gap:25px;align-items:center}.desktop-nav a{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}.desktop-nav a:hover{color:var(--gold)}.toolbar{display:flex;gap:8px}.iconbtn{width:39px;height:39px;border:1px solid var(--line);background:var(--paper);border-radius:100px;color:var(--green);display:grid;place-items:center}.iconbtn:hover{border-color:var(--gold)}
+    .hero{min-height:min(940px,100svh);position:relative;display:flex;align-items:center;justify-content:center;padding:115px 20px 80px;overflow:hidden;background:linear-gradient(90deg,rgba(9,28,25,.69),rgba(9,28,25,.28),rgba(9,28,25,.69)),url('images/hero.jpg') center 38%/cover no-repeat,#23463e;text-align:center;color:#fff}
+    .hero::before{content:'';position:absolute;inset:16px;border:1px solid rgba(240,218,169,.52);pointer-events:none}.hero::after{content:'';position:absolute;inset:24px;border:1px solid rgba(240,218,169,.15);pointer-events:none}.hero-content{position:relative;z-index:1;max-width:900px;animation:rise 1s both}.eyebrow{letter-spacing:.33em;text-transform:uppercase;font-size:11px;font-weight:600}.hero .eyebrow{color:#f3dfb9}.ornament{font:38px 'Cormorant Garamond',serif;line-height:1.2;color:#eac88c;margin:22px auto}.hero h1{font:clamp(70px,11vw,148px)/.86 'Cormorant Garamond',serif;letter-spacing:-.045em;margin:24px auto 8px;font-weight:500}.hero h1 em{font-weight:400;color:#efd59d}.hero h1 small{display:block;font:italic .34em 'Cormorant Garamond',serif;line-height:1.4;letter-spacing:0;color:#fff5df}.hero-kh{font-size:clamp(18px,3vw,26px);margin:28px 0;color:#fff9ec}.hero-date{font:24px 'Cormorant Garamond',serif;letter-spacing:.22em;text-transform:uppercase}.hero-place{font-size:13px;letter-spacing:.12em;margin-top:15px}.hero-scroll{position:absolute;z-index:1;bottom:35px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.18em;white-space:nowrap}.hero-scroll:after{content:'';display:block;width:1px;height:32px;background:#eacf9b;margin:11px auto 0}
+    main{overflow:hidden}.section{padding:100px 22px}.wrap{max-width:1100px;margin:auto}.section-heading{text-align:center;margin-bottom:45px}.kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.26em;font-size:11px;font-weight:700}.section-heading h2{font:clamp(44px,7vw,72px)/1 'Cormorant Garamond',serif;margin:16px 0;color:var(--green);font-weight:500}.section-heading p{color:var(--muted);line-height:2;max-width:650px;margin:auto}.divider-flower{font-size:25px;color:var(--gold);margin:15px 0}
+    .intro{background:var(--paper);text-align:center}.intro-inner{max-width:780px;margin:auto}.intro .kh-title{font-family:'Moul',serif;font-size:clamp(21px,3.2vw,35px);line-height:1.9;font-weight:400;color:var(--green)}.intro p{line-height:2.1}.names{font:clamp(57px,9vw,100px)/1 'Cormorant Garamond',serif;color:var(--green);margin:25px 0}.names span{display:inline-block;color:var(--gold);font-style:italic;font-size:.7em;padding:0 10px}.muted{color:var(--muted)}
+    .details{background:var(--bg)}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.info-card{background:var(--paper);padding:40px 25px;text-align:center;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.info-icon{font-size:29px;color:var(--gold)}.info-card h3{color:var(--green);font-size:19px;margin:19px 0 10px}.info-card p{font-size:14px;line-height:2;color:var(--muted);margin:0}.info-card strong{color:var(--ink)}
+    .countdown{background:var(--green);color:var(--paper);text-align:center;padding:70px 20px}.countdown h2{font:clamp(35px,6vw,56px) 'Cormorant Garamond',serif;margin:0 0 30px;color:var(--paper);font-weight:500}.count-grid{display:flex;justify-content:center;gap:clamp(12px,4vw,55px)}.count-item strong{display:block;font:clamp(43px,7vw,75px)/1 'Cormorant Garamond',serif;min-width:65px}.count-item span{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--gold)}.count-message{margin:25px auto 0;color:var(--paper);opacity:.85}
+    .story{background:var(--paper)}.story-layout{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}.photo-frame{position:relative;padding:15px}.photo-frame:before{content:'';position:absolute;inset:0 30px 30px 0;border:1px solid var(--gold);border-radius:140px 140px 12px 12px}.photo-frame img{position:relative;aspect-ratio:4/5;width:100%;object-fit:cover;border-radius:140px 140px 12px 12px;background:#c2cec4}.story-copy h2{font:clamp(50px,6vw,72px) 'Cormorant Garamond',serif;font-weight:500;color:var(--green);margin:15px 0}.story-copy p{line-height:2;color:var(--muted)}.story-copy blockquote{padding-left:20px;margin:25px 0;border-left:2px solid var(--gold);font:italic 28px/1.4 'Cormorant Garamond',serif;color:var(--green)}
+    .gallery{background:var(--bg)}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.gallery-grid button{border:0;padding:0;border-radius:14px;overflow:hidden;background:#c3d0c7;position:relative;aspect-ratio:4/5}.gallery-grid button img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.gallery-grid button:hover img{transform:scale(1.055)}.gallery-grid button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.gallery-grid button:after{content:'↗';position:absolute;bottom:15px;right:15px;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:#fff;background:rgba(0,0,0,.4)}
+    .location{background:var(--paper)}.location-card{border:1px solid var(--line);border-radius:23px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;background:var(--bg)}.location-art{min-height:380px;display:grid;place-items:center;background:linear-gradient(140deg,#1b4941,#367467);color:#eed9ab;text-align:center;padding:35px}.location-art .map-symbol{font-size:75px}.location-art p{letter-spacing:.2em;font-size:12px;text-transform:uppercase}.location-copy{padding:55px;align-self:center}.location-copy h3{font:47px 'Cormorant Garamond',serif;font-weight:500;color:var(--green);margin:10px 0}.location-copy p{line-height:2;color:var(--muted)}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border:1px solid var(--green);background:var(--green);color:var(--paper);border-radius:999px;font-weight:600;font-size:13px;transition:transform .2s,opacity .2s;min-height:49px}.button:hover{transform:translateY(-2px);opacity:.9}.button.outline{background:transparent;color:var(--green)}
+    .rsvp{background:var(--bg)}.rsvp-box{max-width:690px;margin:auto;padding:40px;background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{margin-bottom:19px}.field label{display:block;font-size:13px;font-weight:600;margin-bottom:8px}.field input,.field select{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:14px;border-radius:11px;outline:none;min-height:49px}.field input:focus,.field select:focus{border-color:var(--gold)}.rsvp-help{color:var(--muted);font-size:12px;line-height:1.8}.submit{width:100%}.thankyou{background:var(--green);padding:83px 22px;text-align:center;color:var(--paper)}.thankyou h2{font:clamp(56px,8vw,91px) 'Cormorant Garamond',serif;margin:10px 0;color:var(--paper);font-weight:500}.thankyou p{line-height:2;max-width:660px;margin:0 auto;color:var(--paper)}footer{background:var(--bg);padding:30px 20px;text-align:center;font-size:12px;color:var(--muted)}footer strong{font:26px 'Cormorant Garamond',serif;color:var(--green)}
+    .modal{position:fixed;z-index:99;inset:0;background:rgba(3,15,13,.94);display:none;align-items:center;justify-content:center;padding:60px 24px 35px}.modal.open{display:flex}.modal img{max-height:100%;max-width:100%;object-fit:contain;border-radius:10px}.modal-close,.modal-prev,.modal-next{position:absolute;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;border-radius:50%;width:44px;height:44px;font-size:23px}.modal-close{right:20px;top:18px}.modal-prev{left:12px;top:50%}.modal-next{right:12px;top:50%}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:76px;z-index:100;background:#fff;color:#000;padding:10px}
+    @keyframes rise{from{transform:translateY(25px);opacity:0}to{transform:translateY(0);opacity:1}}@media(max-width:800px){.desktop-nav{display:none}.top-inner{min-height:59px;padding:8px 15px}.brand{font-size:24px}.hero{min-height:800px;min-height:100svh}.info-grid{grid-template-columns:1fr}.info-card{padding:28px}.story-layout{grid-template-columns:1fr;gap:25px}.story-layout .photo-frame{max-width:500px;margin:auto}.location-card{grid-template-columns:1fr}.location-art{min-height:270px}.location-copy{padding:32px}.section{padding:75px 20px}}@media(max-width:520px){.hero h1{font-size:clamp(65px,18vw,91px)}.hero-date{font-size:18px;letter-spacing:.13em}.hero .eyebrow{letter-spacing:.18em}.gallery-grid{grid-template-columns:repeat(2,1fr);gap:9px}.gallery-grid button{border-radius:9px}.rsvp-box{padding:26px 18px}.form-grid{grid-template-columns:1fr;gap:0}.count-grid{gap:13px}.count-item strong{font-size:44px;min-width:55px}.count-item span{font-size:9px}.names{font-size:56px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    /* ===== Improvements ===== */
+    :root{--muted:#5d6a63;--gold:#8c6427}
+    [id]{scroll-margin-top:70px}.topbar{padding-top:env(safe-area-inset-top,0px)}
+    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+    .modal-prev,.modal-next{top:50%;transform:translateY(-50%)}.cal-row{text-align:center;margin-top:32px}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.reveal.in{opacity:1;transform:none}
+    @media(max-width:800px){[id]{scroll-margin-top:100px}.top-inner{flex-wrap:wrap;row-gap:2px;padding-bottom:6px}.desktop-nav{display:flex;order:3;width:100%;justify-content:safe center;gap:18px;padding-bottom:4px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}.desktop-nav a{font-size:11px;letter-spacing:.05em}.hero{padding-top:135px}}
+    /* ===== Khmer names ===== */
+    .brand{font-family:'Moul','Kantumruy Pro',serif;font-size:15px;font-weight:400;letter-spacing:0}
+    .hero h1{font-family:'Moul','Kantumruy Pro',serif;font-size:clamp(30px,6.5vw,78px);line-height:1.6;letter-spacing:0;font-weight:400}.hero h1 small{font-family:'Cormorant Garamond',serif;font-size:.5em;line-height:1.2}
+    .names{font-family:'Moul','Kantumruy Pro',serif;font-size:clamp(24px,5vw,50px);line-height:1.8}.names span{font-family:'Cormorant Garamond',serif;font-size:.9em}
+    footer strong{font-family:'Moul','Kantumruy Pro',serif;font-size:15px;font-weight:400}
+    /* ===== Animation ===== */
+    #progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:30;background:linear-gradient(90deg,var(--gold),#eac88c);transform:scaleX(0);transform-origin:left;pointer-events:none}
+    #petals{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+    .hero{animation:drift 26s ease-in-out infinite alternate}
+    @keyframes drift{from{background-position:center,50% 30%,center}to{background-position:center,50% 48%,center}}
+    .hero-content{animation:none}.hero-content>*{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+    .hero-content>:nth-child(1){animation-delay:.15s}.hero-content>:nth-child(2){animation-delay:.35s}.hero-content>:nth-child(3){animation-delay:.55s}.hero-content>:nth-child(4){animation-delay:.8s}.hero-content>:nth-child(5){animation-delay:1.05s}.hero-content>:nth-child(6){animation-delay:1.25s}.hero-content>:nth-child(7){animation-delay:1.45s}
+    .ornament,.divider-flower{animation:float 4.5s ease-in-out infinite}
+    .hero-content>.ornament{animation:rise 1s .35s both,float 4.5s 1.4s ease-in-out infinite}
+    @keyframes float{50%{transform:translateY(-6px);opacity:.75}}
+    .hero-scroll:after{transform-origin:top;animation:cue 2s ease-in-out infinite}
+    @keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+    .info-card{transition:transform .35s,box-shadow .35s}.info-card:hover{transform:translateY(-6px)}
+    .button{position:relative;overflow:hidden}.button:after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.35),transparent 65%);transform:translateX(-120%)}.button:hover:after{transform:translateX(120%);transition:transform .7s}
+    .count-item strong.tick{animation:tick .45s ease}@keyframes tick{from{transform:translateY(-10px);opacity:.25}to{transform:none;opacity:1}}
+    .photo-frame.reveal{transform:translateX(-45px)}.story-copy.reveal{transform:translateX(45px)}.gallery-grid button.reveal{transform:translateY(30px) scale(.96)}
+    .reveal.in{opacity:1;transform:none}
+  
+/* ===== Cream & gold editorial invitation, inspired by provided reference ===== */
+:root{--bg:#f8f5ea;--paper:#fffdf6;--gold:#b18a23;--green:#275647;--ink:#29291f;--muted:#596358}
+body{background:#f6f1e6}body.dark{--gold:#e3bc6e;--paper:#283a34;--bg:#1b2824;--ink:#f9f0da;--muted:#c3c7bd}
+.topbar{background:color-mix(in srgb,var(--paper) 94%,transparent)}
+.cover-section{background:#f5f0e6;padding:88px 20px 22px;min-height:min(780px,100svh);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cover-inner{width:min(1100px,100%);display:grid;grid-template-columns:.92fr 1.25fr;gap:clamp(20px,4vw,65px);align-items:center;padding:20px 0}
+.cover-photo{position:relative;aspect-ratio:3/4.2;max-height:680px;padding:8px;background:#fcfaf4;box-shadow:0 14px 35px #483b2819;transform:rotate(-1deg);animation:cover-photo-in 1.1s .2s both}
+.cover-photo img{width:100%;height:100%;object-fit:cover;object-position:center}.photo-caption{position:absolute;bottom:20px;left:0;right:0;color:#fff;font:10px 'Cormorant Garamond',serif;letter-spacing:.2em;text-align:center;text-shadow:0 1px 6px #333}
+.cover-copy{text-align:center;position:relative;align-self:center;padding:35px 0 55px;animation:cover-text-in 1.15s .35s both}.ornate-top{color:#b69244;font-size:22px;letter-spacing:.6em}.kh-gold{font:clamp(21px,3vw,37px)/1.9 'Moul',serif;color:#a27b0a;text-shadow:0 2px 0 #e6d494;margin:12px 0 0}.gold-sub{font:clamp(20px,2.7vw,32px) 'Cormorant Garamond',serif;font-weight:600;color:#af8620;margin:0 0 15px}
+.name-english{font:italic clamp(44px,7.2vw,101px)/.95 'Cormorant Garamond',serif;letter-spacing:-.065em;color:#292c25}.name-english span{display:block;font-size:.7em;line-height:.85;letter-spacing:0}.name-kh{font:clamp(12px,1.8vw,21px)/2 'Kantumruy Pro',sans-serif;margin:23px auto;color:#3f4d40}.name-kh span{color:#ae8624;margin:0 4px}.gold-rule{width:90px;height:1px;background:#b8994e;margin:19px auto}.date-script{font:italic clamp(25px,3.1vw,38px) 'Cormorant Garamond',serif;margin:10px 0;color:#36372c}.event-time{color:#857039;font-size:13px}.cover-cta{display:inline-block;margin-top:23px;padding:12px 24px;border:1px solid #ba9e62;border-radius:40px;color:#73602f;font-size:12px;transition:background .3s,transform .3s}.cover-cta:hover{background:#e7dec5;transform:translateY(-3px)}.butterfly{position:absolute;right:-9px;bottom:3px;font-size:clamp(65px,10vw,135px);transform:rotate(-26deg);opacity:.35;filter:sepia(1) saturate(3) hue-rotate(355deg)}.cover-small{font-size:10px;letter-spacing:.25em;color:#9e8755;margin-top:35px}
+@keyframes cover-photo-in{from{opacity:0;transform:translateX(-28px) rotate(-4deg) scale(.97)}to{opacity:1;transform:rotate(-1deg)}}@keyframes cover-text-in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.scrapbook-section{padding:35px 18px;background:#e9e8dc}.scrap-wrap{max-width:1100px;margin:auto;position:relative;overflow:hidden;background:linear-gradient(140deg,#fcf9ef,#f7f2e5);border-radius:4px;box-shadow:0 5px 30px #4442}.scrap-wrap::before,.scrap-wrap::after{content:'';position:absolute;pointer-events:none;width:230px;height:230px;border:15px solid #e9b99b22;border-radius:48%;transform:rotate(30deg)}.scrap-wrap::before{left:-95px;top:-100px}.scrap-wrap::after{right:-105px;bottom:-125px}
+.scrap-body{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;padding:48px 36px 35px;position:relative}.scrap-left{text-align:center;position:relative;z-index:1}.kh-big{color:#283f31;font:clamp(29px,4vw,51px)/1.7 'Moul',serif;margin:0 0 10px}.kh-description{max-width:470px;font-size:clamp(13px,1.6vw,16px);line-height:2;color:#37352e;margin:0 auto 20px}.qr-row{display:flex;align-items:center;justify-content:center;gap:18px}.qr-frame{width:170px;background:#fff;border:6px solid #fff;box-shadow:0 5px 16px #0002;flex-shrink:0}.qr-frame img{width:100%}.map-mini{min-width:0;text-align:left;display:flex;flex-direction:column;gap:7px;color:#365c44;font-size:12px}.map-mini strong{font-weight:700}.location-pin{font-size:24px}.map-button{background:#2f745c;color:#fff;border-radius:5px;padding:10px 13px;align-self:flex-start;font-size:12px}.mini-note{font-size:12px;color:#678574}.hand-drawn-arrow{position:absolute;right:10px;bottom:0;font:58px cursive;transform:rotate(-25deg);color:#325b47}.tape{position:absolute;top:-36px;left:40%;width:85px;height:25px;background:#d2af9290;transform:rotate(-7deg)}
+.scrap-right{position:relative;min-height:440px}.polaroid{position:absolute;width:66%;background:#fff;padding:10px 10px 30px;box-shadow:0 10px 25px #0003}.polaroid img{width:100%;aspect-ratio:4/3;object-fit:cover}.polaroid span{display:block;text-align:center;font:italic 19px 'Cormorant Garamond',serif;margin-top:7px;color:#667365}.polaroid-first{right:3%;top:0;transform:rotate(9deg)}.polaroid-second{left:1%;bottom:0;transform:rotate(-7deg)}.flower-doodle{position:absolute;color:#cc6493;top:48%;left:22%;font-size:76px;opacity:.8;z-index:2;filter:drop-shadow(0 4px 4px #0002)}
+.blessing-section{padding:30px 0;background:#f3eedf;overflow:hidden}.blessing-inner{max-width:1280px;min-height:475px;margin:auto;display:grid;grid-template-columns:1fr 1.8fr 1fr;align-items:end;gap:5px}.blessing-center{text-align:center;padding:30px 8px 55px;align-self:center;color:#30382d}.blessing-center h2{color:#345b40;font:clamp(19px,2.6vw,31px)/1.9 'Moul',serif;margin:12px 0 15px}.blessing-center p{font:clamp(14px,1.65vw,18px)/2.15 'Kantumruy Pro',sans-serif;margin:0 auto;max-width:600px}.blessing-center span{color:#988049;font-size:13px}.blessing-symbol{color:#a77d31;font-size:27px}.blessing-line{margin:14px;color:#b58b44;font-size:25px}.blessing-photo{max-height:450px;align-self:end;overflow:hidden}.blessing-photo img{height:425px;width:100%;object-fit:cover;mask-image:linear-gradient(to bottom,#000 75%,transparent)}.blessing-photo-left{transform:translateX(-25px) rotate(-4deg)}.blessing-photo-right{transform:translateX(25px) rotate(4deg)}
+@media(max-width:700px){.cover-section{min-height:auto;padding:95px 10px 28px}.cover-inner{grid-template-columns:.78fr 1.12fr;gap:13px;padding:0}.cover-photo{padding:4px;aspect-ratio:3/4.5}.cover-copy{padding:4px 0 25px}.ornate-top{font-size:13px}.kh-gold{font-size:clamp(14px,3.9vw,24px);line-height:1.8}.gold-sub{font-size:clamp(15px,4vw,23px)}.name-english{font-size:clamp(32px,8.4vw,61px)}.name-kh{font-size:clamp(10px,2.8vw,15px);line-height:1.6;margin:13px 0}.date-script{font-size:clamp(18px,4.6vw,29px)}.event-time{font-size:10px}.cover-cta{font-size:10px;padding:9px 13px;margin-top:12px}.butterfly{font-size:61px;right:-3px;bottom:-17px}.cover-small{font-size:8px;margin-top:23px}.scrap-body{grid-template-columns:1fr 1fr;gap:5px;padding:22px 10px}.kh-big{font-size:clamp(19px,5vw,29px)}.kh-description{font-size:11px;line-height:1.8}.qr-row{gap:7px;flex-wrap:wrap}.qr-frame{width:135px;max-width:75%}.map-mini{text-align:center;align-items:center;font-size:10px}.map-button{align-self:center;font-size:10px}.scrap-right{min-height:380px}.polaroid{width:94%;padding:5px 5px 17px}.polaroid-first{right:0;top:15px}.polaroid-second{left:0;bottom:16px}.polaroid span{font-size:13px}.flower-doodle{font-size:48px}.blessing-inner{grid-template-columns:.65fr 2fr .65fr;min-height:390px}.blessing-center{padding:20px 0}.blessing-center h2{font-size:clamp(14px,3.4vw,23px)}.blessing-center p{font-size:clamp(11px,2.8vw,15px);line-height:2}.blessing-photo img{height:310px}.blessing-photo-left{transform:translateX(-18px) rotate(-4deg)}.blessing-photo-right{transform:translateX(18px) rotate(4deg)}}
+@media(max-width:420px){.scrap-body{grid-template-columns:1fr 1fr}.qr-frame{width:113px}.scrap-right{min-height:360px}.blessing-inner{grid-template-columns:.4fr 2.3fr .4fr}.blessing-photo img{height:270px}.blessing-center h2{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.cover-photo,.cover-copy{animation:none}}
 </style>
 </head>
-
 <body>
+<!--
+    QUICK SETUP:
+    1. Replace images/hero.jpg, images/couple.jpg and images/gallery-1.jpg through gallery-6.jpg with your own photos.
+    2. Edit WEDDING_CONFIG near the bottom: date, venue, address, mapsUrl and apiUrl.
+    3. RSVP now sends data directly to your C++ Telegram Bot.
+  -->
+<a class="skip" href="#invitation">Skip to invitation</a>
+<div aria-hidden="true" id="progress"></div>
+<header class="topbar">
+<div class="top-inner">
+<a class="brand" href="#home">រតនា <span>&amp;</span> ពៅរដ្ឋា</a>
+<nav aria-label="Main navigation" class="desktop-nav">
+<a data-en="Invitation" data-km="សំបុត្រអញ្ជើញ" href="#invitation">Invitation</a><a data-en="Details" data-km="កម្មវិធី" href="#details">Details</a><a data-en="Gallery" data-km="រូបភាព" href="#gallery">Gallery</a><a data-en="Location" data-km="ទីតាំង" href="#location">Location</a><a href="#rsvp">RSVP</a>
+</nav>
+<div class="toolbar"><button aria-label="Switch language" class="iconbtn" id="langToggle" title="Switch language">EN</button><button aria-label="Toggle dark mode" class="iconbtn" id="themeToggle" title="Toggle dark mode">☾</button></div>
+</div>
+</header>
+<main>
+<section aria-labelledby="heroTitle" class="cover-section" id="home"><div class="cover-inner">
+<div class="cover-photo"><img alt="Our wedding portrait" fetchpriority="high" src="images/hero.jpg"/><span class="photo-caption">OUR FOREVER BEGINS HERE · 2027</span></div>
+<div class="cover-copy"><div class="ornate-top">✦ ❦ ✦</div><p class="kh-gold" data-en="A Joyful Wedding Celebration" data-km="សិរីមង្គលអាពាហ៍ពិពាហ៍">សិរីមង្គលអាពាហ៍ពិពាហ៍</p><p class="gold-sub">wedding invitation</p><div class="name-english">Ratana <span>&amp;</span> Povrotha</div><div class="name-kh">សំរិទ្ធ រតនា <span>♥</span> រាជ្យ ពៅរដ្ឋា</div><div class="gold-rule"></div><p class="date-script">Monday, 25 January 2027</p><p class="event-time">៨:០០ ព្រឹក · 8:00 AM</p><a class="cover-cta" data-en="Open the invitation ↓" data-km="បើកសំបុត្រអញ្ជើញ ↓" href="#invitation">បើកសំបុត្រអញ្ជើញ ↓</a><div aria-hidden="true" class="butterfly">🦋</div><p class="cover-small" id="heroVenue">CAMBODIA</p></div>
+</div></section><section class="scrapbook-section" id="location"><div class="scrap-wrap">
+<div class="paper-fleck"></div><div class="scrap-body">
+<div class="scrap-left"><div class="tape tape-top"></div><h2 class="kh-big" data-en="Wedding Location 📍" data-km="ទីតាំងកម្មវិធី 📍">ទីតាំងកម្មវិធី 📍</h2><p class="kh-description" data-en="Dear family and friends, please join us to celebrate our wedding day." data-km="សូមគោរពអញ្ជើញឯកឧត្តម លោកជំទាវ លោក លោកស្រី និងមិត្តភក្តិទាំងអស់ ចូលរួមពិធីមង្គលការរបស់យើងខ្ញុំ។">សូមគោរពអញ្ជើញឯកឧត្តម លោកជំទាវ លោក លោកស្រី និងមិត្តភក្តិទាំងអស់ ចូលរួមពិធីមង្គលការរបស់យើងខ្ញុំ។</p><div class="qr-row"><a class="qr-frame" href="https://maps.app.goo.gl/rp2ThMDoheG5NvHq9" id="qrLink" rel="noopener noreferrer" target="_blank"><img alt="Scan QR to open wedding location on Google Maps" src="images/wedding-location-qr.png"/></a><div class="map-mini"><span class="location-pin">📍</span><strong id="locationVenue">Wedding Location</strong><span id="locationAddress">Google Maps Location</span><a class="map-button" data-en="View on Google Maps ↗" data-km="ចុចមើលផែនទី ↗" href="https://maps.app.goo.gl/rp2ThMDoheG5NvHq9" id="mapLink" rel="noopener noreferrer" target="_blank">ចុចមើលផែនទី ↗</a></div></div><div aria-hidden="true" class="hand-drawn-arrow">↙</div><p class="mini-note" id="setupNote">សូមស្កេន QR Code ឬចុចប៊ូតុងដើម្បីមើលទីតាំង</p></div>
+<div class="scrap-right"><div class="polaroid polaroid-first"><img alt="Wedding couple memory" loading="lazy" src="images/gallery-1.jpg"/><span>sweet moments ♡</span></div><div class="polaroid polaroid-second"><img alt="Wedding couple together" loading="lazy" src="images/gallery-2.jpg"/><span>together forever</span></div><div aria-hidden="true" class="flower-doodle">✿</div></div>
+</div></div></section><section class="blessing-section" id="invitation"><div class="blessing-inner"><div class="blessing-photo blessing-photo-left"><img alt="Wedding portrait" loading="lazy" src="images/gallery-3.jpg"/></div><div class="blessing-center"><div class="blessing-symbol">❀</div><h2 data-en="You Are Cordially Invited" data-km="មានកិត្តិយសសូមគោរពអញ្ជើញ">មានកិត្តិយសសូមគោរពអញ្ជើញ</h2><p data-en="We, Samrith Ratana and Reach Povrotha, joyfully invite you and your family to join us for our wedding celebration. Your presence is a precious blessing and an honor to us." data-km="យើងខ្ញុំ សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា មានសេចក្តីសោមនស្សរីករាយជាអនេក សូមគោរពអញ្ជើញលោកអ្នក និងក្រុមគ្រួសារ ចូលរួមជាភ្ញៀវកិត្តិយសក្នុងពិធីមង្គលការរបស់យើងខ្ញុំ។ វត្តមានរបស់លោកអ្នកគឺជាកិត្តិយស និងជាពរជ័យដ៏ថ្លៃថ្លាសម្រាប់យើងខ្ញុំ។">យើងខ្ញុំ សំរិទ្ធ រតនា និង រាជ្យ ពៅរដ្ឋា មានសេចក្តីសោមនស្សរីករាយជាអនេក សូមគោរពអញ្ជើញលោកអ្នក និងក្រុមគ្រួសារ ចូលរួមជាភ្ញៀវកិត្តិយសក្នុងពិធីមង្គលការរបស់យើងខ្ញុំ។ វត្តមានរបស់លោកអ្នកគឺជាកិត្តិយស និងជាពរជ័យដ៏ថ្លៃថ្លាសម្រាប់យើងខ្ញុំ។</p><div class="blessing-line">❦</div><span>Monday · 25 January 2027</span></div><div class="blessing-photo blessing-photo-right"><img alt="Wedding flowers and romance" loading="lazy" src="images/gallery-4.jpg"/></div></div></section>
 
-<main class="container">
-    <h1>Contact Us</h1>
-    <p>សូមបំពេញព័ត៌មានរបស់អ្នក ដើម្បីឱ្យយើងខ្ញុំទាក់ទងទៅវិញ។</p>
+<section class="section details" id="details"><div class="wrap"><div class="section-heading"><div class="kicker">Celebrate with us</div><h2>Wedding Details</h2><p data-en="Every beautiful moment is better when shared with you." data-km="សូមអញ្ជើញចូលរួមអបអរសាទរថ្ងៃដ៏ពិសេសរបស់យើងខ្ញុំ។">សូមអញ្ជើញចូលរួមអបអរសាទរថ្ងៃដ៏ពិសេសរបស់យើងខ្ញុំ។</p></div><div class="info-grid"><article class="info-card"><div class="info-icon">✧</div><h3 data-en="The Date" data-km="កាលបរិច្ឆេទ">កាលបរិច្ឆេទ</h3><p><strong>Monday · 25 January 2027</strong><br/><span data-en="A day to remember forever" data-km="ថ្ងៃដ៏មានអត្ថន័យសម្រាប់យើងខ្ញុំ">ថ្ងៃដ៏មានអត្ថន័យសម្រាប់យើងខ្ញុំ</span></p></article><article class="info-card"><div class="info-icon">◷</div><h3 data-en="The Time" data-km="ពេលវេលា">ពេលវេលា</h3><p><strong id="displayTime">8:00 AM</strong><br/><span data-en="Please arrive on time" data-km="សូមគោរពអញ្ជើញមកទាន់ពេលវេលា">សូមគោរពអញ្ជើញមកទាន់ពេលវេលា</span></p></article><article class="info-card"><div class="info-icon">⌖</div><h3 data-en="The Venue" data-km="ទីកន្លែង">ទីកន្លែង</h3><p><strong id="displayVenue">Venue to be announced</strong><br/><span id="displayAddress">Cambodia</span></p></article></div><div class="cal-row"><button class="button outline" id="addCal" type="button">📅 <span data-en="Add to calendar" data-km="បន្ថែមទៅប្រតិទិន">បន្ថែមទៅប្រតិទិន</span></button></div></div></section>
+<section class="countdown"><div class="wrap"><div class="kicker">Counting down to forever</div><h2>Until Our Big Day</h2><div aria-label="Wedding countdown" class="count-grid"><div class="count-item"><strong id="days">000</strong><span>Days</span></div><div class="count-item"><strong id="hours">00</strong><span>Hours</span></div><div class="count-item"><strong id="minutes">00</strong><span>Minutes</span></div><div class="count-item"><strong id="seconds">00</strong><span>Seconds</span></div></div><p class="count-message" id="countMessage">We can't wait to celebrate with you ♡</p></div></section>
+<section class="section story"><div class="wrap story-layout"><div class="photo-frame"><img alt="Wedding couple portrait" loading="lazy" onerror="this.src='https://placehold.co/800x1000/e3e9de/315c50?text=Your+Couple+Photo'" src="images/couple.jpg"/></div><div class="story-copy"><div class="kicker">Our love story</div><h2>A Beautiful Beginning</h2><p data-en="From the first hello to a lifetime of togetherness, our story has been filled with laughter, hope, and love. We are so grateful to share this new beginning with the people we cherish most." data-km="ពីថ្ងៃដែលយើងបានជួបគ្នា រហូតដល់ថ្ងៃដែលយើងសម្រេចចិត្តរួមដំណើរជីវិតជាមួយគ្នា ពេលវេលាទាំងអស់ពោរពេញដោយសេចក្តីស្រឡាញ់ ក្តីសង្ឃឹម និងស្នាមញញឹម។ យើងខ្ញុំរីករាយណាស់ដែលអាចចែករំលែកពេលវេលាដ៏វិសេសនេះជាមួយលោកអ្នក។">ពីថ្ងៃដែលយើងបានជួបគ្នា រហូតដល់ថ្ងៃដែលយើងសម្រេចចិត្តរួមដំណើរជីវិតជាមួយគ្នា ពេលវេលាទាំងអស់ពោរពេញដោយសេចក្តីស្រឡាញ់ ក្តីសង្ឃឹម និងស្នាមញញឹម។ យើងខ្ញុំរីករាយណាស់ដែលអាចចែករំលែកពេលវេលាដ៏វិសេសនេះជាមួយលោកអ្នក។</p><blockquote>“Every love story is beautiful, but ours is my favorite.”</blockquote><p>រតនា &amp; ពៅរដ្ឋា · 25.01.2027</p></div></div></section>
+<section class="section gallery" id="gallery"><div class="wrap"><div class="section-heading"><div class="kicker">Captured with love</div><h2>Our Gallery</h2><p data-en="A few of our favorite moments together." data-km="អនុស្សាវរីយ៍ដ៏ស្រស់ស្អាតរបស់យើងខ្ញុំ។">អនុស្សាវរីយ៍ដ៏ស្រស់ស្អាតរបស់យើងខ្ញុំ។</p></div><div class="gallery-grid" id="galleryGrid"></div></div></section>
 
-    <form id="contactForm">
-
-        <label for="name">Name · ឈ្មោះ</label>
-        <input
-            id="name"
-            name="name"
-            type="text"
-            maxlength="100"
-            autocomplete="name"
-            placeholder="Your name"
-            required
-        >
-
-        <label for="phone">Phone · លេខទូរស័ព្ទ</label>
-        <input
-            id="phone"
-            name="phone"
-            type="tel"
-            maxlength="30"
-            autocomplete="tel"
-            placeholder="012 345 678"
-            required
-        >
-
-        <label for="service">Service · សេវាកម្ម</label>
-        <select id="service" name="service" required>
-            <option value="">Choose a service</option>
-            <option value="Home Internet">Home Internet</option>
-            <option value="Business Internet">Business Internet</option>
-            <option value="WiFi Installation">WiFi Installation</option>
-            <option value="CCTV Installation">CCTV Installation</option>
-            <option value="Other">Other</option>
-        </select>
-
-        <label for="message">Message · ព័ត៌មានបន្ថែម</label>
-        <textarea
-            id="message"
-            name="message"
-            maxlength="1000"
-            placeholder="Tell us what you need..."
-            required
-        ></textarea>
-
-        <!-- Spam-trap field: human users leave this empty -->
-        <div class="hidden-field" aria-hidden="true">
-            <label for="website">Leave empty</label>
-            <input
-                type="text"
-                id="website"
-                name="website"
-                tabindex="-1"
-                autocomplete="off"
-            >
-        </div>
-
-        <button type="submit" id="submitBtn">
-            Send Request
-        </button>
-
-        <p id="status" role="status" aria-live="polite"></p>
-    </form>
+<section class="section rsvp" id="rsvp"><div class="wrap"><div class="section-heading"><div class="kicker">Your presence is our gift</div><h2>Kindly RSVP</h2><p data-en="Please let us know if you can celebrate with us." data-km="សូមមេត្តាបញ្ជាក់ការចូលរួមរបស់លោកអ្នក។">សូមមេត្តាបញ្ជាក់ការចូលរួមរបស់លោកអ្នក។</p></div><div class="rsvp-box"><form id="rsvpForm"><div class="form-grid"><div class="field"><label data-en="Your full name *" data-km="ឈ្មោះរបស់លោកអ្នក *" for="guestName">ឈ្មោះរបស់លោកអ្នក *</label><input autocomplete="name" id="guestName" maxlength="100" name="guestName" placeholder="Your name" required=""/></div><div class="field"><label data-en="Number of guests *" data-km="ចំនួនភ្ញៀវ *" for="guestCount">ចំនួនភ្ញៀវ *</label><select id="guestCount" name="guestCount" required=""><option value="1">1 Person</option><option value="2">2 People</option><option value="3">3 People</option><option value="4">4 People</option><option value="5">5 People</option><option value="6">6+ People</option></select></div></div><div class="field"><label data-en="Will you attend? *" data-km="តើលោកអ្នកអាចចូលរួមបានទេ? *" for="attendance">តើលោកអ្នកអាចចូលរួមបានទេ? *</label><select id="attendance" name="attendance"><option value="Yes, I will attend">Yes, with pleasure / បាទ-ចាស ចូលរួម</option><option value="Sorry, I cannot attend">Sorry, I cannot attend / សូមអភ័យទោស មិនអាចចូលរួមបាន</option></select></div><div class="field"><label data-en="Your wishes (optional)" data-km="ពាក្យជូនពរ (មិនបង្ខំ)" for="wishes">ពាក្យជូនពរ (មិនបង្ខំ)</label><input id="wishes" maxlength="240" name="wishes" placeholder="Best wishes for the couple..."/></div><button class="button submit" type="submit">✉ <span data-en="Send RSVP via Telegram" data-km="ផ្ញើការបញ្ជាក់តាម Telegram">ផ្ញើការបញ្ជាក់តាម Telegram</span></button><p aria-live="polite" class="rsvp-help" id="rsvpHelp" role="status">This sends your RSVP directly to the couple via Telegram.</p></form></div></div></section>
+<section class="thankyou"><div class="kicker">With all our love</div><h2>Thank You!</h2><p data-en="Thank you for being part of our journey. We look forward to sharing our happiest day with you." data-km="សូមអរគុណចំពោះក្តីស្រឡាញ់ និងពរជ័យទាំងអស់។ វត្តមានរបស់លោកអ្នកធ្វើឱ្យថ្ងៃដ៏ពិសេសរបស់យើងខ្ញុំកាន់តែមានន័យ។">សូមអរគុណចំពោះក្តីស្រឡាញ់ និងពរជ័យទាំងអស់។ វត្តមានរបស់លោកអ្នកធ្វើឱ្យថ្ងៃដ៏ពិសេសរបស់យើងខ្ញុំកាន់តែមានន័យ។</p><div class="ornament">❦</div></section>
 </main>
-
+<footer><strong>រតនា &amp; ពៅរដ្ឋា</strong><div>25 January 2027 · Made with ♡</div></footer>
+<div aria-label="Photo gallery" aria-modal="true" class="modal" id="lightbox" role="dialog" tabindex="-1"><button aria-label="Close photo" class="modal-close" id="modalClose">×</button><button aria-label="Previous photo" class="modal-prev" id="modalPrev">‹</button><img alt="Enlarged wedding gallery photo" id="modalImage"/><button aria-label="Next photo" class="modal-next" id="modalNext">›</button></div>
 <script>
-const form = document.getElementById("contactForm");
-const button = document.getElementById("submitBtn");
-const status = document.getElementById("status");
+    // ===== EDIT THESE SETTINGS BEFORE PUBLISHING =====
+    const WEDDING_CONFIG = {
+      date: '2027-01-25T08:00:00+07:00', // Phnom Penh timezone (UTC+07)
+      timeLabel: '8:00 AM',
+      venue: 'Wedding Location · See Map', // Replace with your actual venue name
+      address: 'Scan QR for directions',             // Replace with your full venue address
+      mapsUrl: 'https://maps.app.goo.gl/rp2ThMDoheG5NvHq9', // Replace with exact Google Maps share URL
+      
+      // 👇 PASTE YOUR VERCEL BACKEND URL HERE 👇
+      apiUrl: 'https://YOUR-VERCEL-APP-URL.vercel.app/api/rsvp', 
+      
+      galleryImages: [1,2,3,4,5,6].map(n => `images/gallery-${n}.jpg`)
+    };
 
-form.addEventListener("submit", async (event) => {
-    event.preventDefault();
+    // Apply event settings.
+    document.getElementById('heroVenue').textContent = WEDDING_CONFIG.venue;
+    document.getElementById('displayTime').textContent = WEDDING_CONFIG.timeLabel;
+    document.getElementById('displayVenue').textContent = WEDDING_CONFIG.venue;
+    document.getElementById('displayAddress').textContent = WEDDING_CONFIG.address;
+    document.getElementById('locationVenue').textContent = WEDDING_CONFIG.venue;
+    document.getElementById('locationAddress').textContent = WEDDING_CONFIG.address;
+    const mapUrl = /^https:\/\//i.test(WEDDING_CONFIG.mapsUrl) ? WEDDING_CONFIG.mapsUrl : 'https://maps.google.com/';
+    document.getElementById('mapLink').href = mapUrl;
 
-    button.disabled = true;
-    button.textContent = "Sending...";
-    status.textContent = "";
-    status.className = "";
+    // Countdown.
+    const weddingTime = new Date(WEDDING_CONFIG.date).getTime();
+    const pad = (n, width = 2) => String(n).padStart(width,'0');
+    function updateCountdown() {
+      const remaining = Math.max(0, weddingTime - Date.now());
+      const seconds = Math.floor(remaining / 1000);
+      document.getElementById('days').textContent = pad(Math.floor(seconds / 86400), 3);
+      document.getElementById('hours').textContent = pad(Math.floor(seconds % 86400 / 3600));
+      document.getElementById('minutes').textContent = pad(Math.floor(seconds % 3600 / 60));
+      document.getElementById('seconds').textContent = pad(seconds % 60);
+      if (!remaining) document.getElementById('countMessage').textContent = 'Our special day is here! ♡';
+    }
+    updateCountdown(); setInterval(updateCountdown, 1000);
 
-    const fields = new FormData(form);
-    const data = Object.fromEntries(fields.entries());
+    // Language switch.
+    const TR = {
+      'You are cordially invited':'សូមអញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស','Celebrate with us':'រួមអបអរជាមួយយើងខ្ញុំ','Wedding Details':'ព័ត៌មានពិធីមង្គលការ',
+      'Monday · 25 January 2027':'ថ្ងៃច័ន្ទ · ២៥ មករា ២០២៧','Counting down to forever':'រាប់ថយក្រោយឆ្ពោះទៅអនាគតរួមគ្នា','Until Our Big Day':'រហូតដល់ថ្ងៃមង្គលការរបស់យើងខ្ញុំ',
+      'Days':'ថ្ងៃ','Hours':'ម៉ោង','Minutes':'នាទី','Seconds':'វិនាទី',"We can't wait to celebrate with you ♡":'យើងខ្ញុំរង់ចាំអបអរជាមួយលោកអ្នក ♡',
+      'Our love story':'រឿងស្នេហារបស់យើង','A Beautiful Beginning':'ការចាប់ផ្តើមដ៏ស្រស់ស្អាត','Captured with love':'ថតទុកដោយក្តីស្រឡាញ់','Our Gallery':'កម្រងរូបភាព',
+      "Where we'll celebrate":'កន្លែងដែលយើងនឹងអបអរ','Wedding Location':'ទីតាំងពិធីមង្គលការ','The Wedding Venue':'ទីកន្លែងប្រារព្ធពិធី','Join us here':'សូមចូលរួមជាមួយយើងនៅទីនេះ','Our Special Day':'ថ្ងៃដ៏ពិសេសរបស់យើង',
+      'Your presence is our gift':'វត្តមានរបស់លោកអ្នកគឺជាកាដូដ៏ថ្លៃថ្លា','Kindly RSVP':'សូមបញ្ជាក់ការចូលរួម','With all our love':'ដោយក្តីស្រឡាញ់ទាំងអស់','Thank You!':'សូមអរគុណ!','SCROLL TO EXPLORE':'រំកិលចុះក្រោម'
+    };
+    document.querySelectorAll('.kicker,h2,.hero-scroll,.count-item span,.location-art p,.location-art div[style],.info-card strong,#countMessage').forEach(el => {
+      const t = el.textContent.trim();
+      if (!el.dataset.km && TR[t]) { el.dataset.en = t; el.dataset.km = TR[t]; }
+    });
+    let language = 'km';
+    function applyLang(l) {
+      language = l; document.documentElement.lang = l;
+      document.querySelectorAll('[data-en][data-km]').forEach(el => { el.textContent = el.dataset[l]; });
+      document.getElementById('langToggle').textContent = l === 'km' ? 'EN' : 'ខ្មែរ';
+    }
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(language === 'km' ? 'en' : 'km'));
+    applyLang('km');
 
-    try {
-        const response = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+    // Light/dark theme.
+    const themeToggle = document.getElementById('themeToggle');
+    function setTheme(dark, save = true) {
+      document.body.classList.toggle('dark',dark);
+      themeToggle.textContent = dark ? '☀' : '☾'; document.querySelector('meta[name=theme-color]').content = dark ? '#0d1d1b' : '#f5f0e7';
+      if (save) try { localStorage.setItem('wedding-theme',dark ? 'dark' : 'light'); } catch(e) {}
+    }
+    let savedTheme = null; try { savedTheme = localStorage.getItem('wedding-theme'); } catch(e) {}
+    setTheme(savedTheme ? savedTheme === 'dark' : matchMedia('(prefers-color-scheme:dark)').matches, false);
+    themeToggle.addEventListener('click', () => setTheme(!document.body.classList.contains('dark')));
+
+    // Gallery.
+    const galleryGrid = document.getElementById('galleryGrid');
+    const lightbox = document.getElementById('lightbox');
+    const modalImage = document.getElementById('modalImage');
+    let selectedImage = 0;
+    let previousFocus = null;
+    const fallback = n => `https://placehold.co/700x850/e3e9de/315c50?text=Photo+${n}`;
+    WEDDING_CONFIG.galleryImages.forEach((src,i) => {
+      const btn = document.createElement('button'); btn.type = 'button'; btn.setAttribute('aria-label',`Open gallery photo ${i+1}`);
+      const img = document.createElement('img'); img.src = src; img.alt = `Wedding gallery photo ${i+1}`; img.loading = 'lazy'; img.onerror = () => { img.onerror=null; img.src=fallback(i+1); };
+      btn.appendChild(img); btn.addEventListener('click',() => openLightbox(i)); galleryGrid.appendChild(btn);
+    });
+    function showImage(i) { selectedImage=(i+WEDDING_CONFIG.galleryImages.length)%WEDDING_CONFIG.galleryImages.length; modalImage.src=WEDDING_CONFIG.galleryImages[selectedImage]; modalImage.onerror=()=>{ modalImage.onerror=null; modalImage.src=fallback(selectedImage+1); }; }
+    function openLightbox(i){ previousFocus=document.activeElement; showImage(i); lightbox.classList.add('open'); document.body.style.overflow='hidden'; document.getElementById('modalClose').focus(); }
+    function closeLightbox(){ lightbox.classList.remove('open'); document.body.style.overflow=''; if(previousFocus) previousFocus.focus(); }
+    document.getElementById('modalClose').addEventListener('click',closeLightbox);
+    document.getElementById('modalPrev').addEventListener('click',()=>showImage(selectedImage-1));
+    document.getElementById('modalNext').addEventListener('click',()=>showImage(selectedImage+1));
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox) closeLightbox();});
+    document.addEventListener('keydown',e=>{if(!lightbox.classList.contains('open'))return;if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')showImage(selectedImage-1);if(e.key==='ArrowRight')showImage(selectedImage+1);});
+
+    // ==== NEW RSVP SUBMIT LOGIC (Sends to C++ Telegram Bot) ====
+    document.getElementById('rsvpForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const help = document.getElementById('rsvpHelp');
+      const btn = e.target.querySelector('button[type="submit"]');
+      
+      const name = document.getElementById('guestName').value.trim();
+      if(!name){document.getElementById('guestName').focus();return;}
+      
+      const count = document.getElementById('guestCount').value;
+      const attendance = document.getElementById('attendance').value;
+      const wishes = document.getElementById('wishes').value.trim();
+
+      // UI Feedback
+      btn.disabled = true;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = 'Sending... ⏳';
+      help.textContent = 'Sending your RSVP...';
+      help.style.color = '';
+
+      try {
+        const response = await fetch(WEDDING_CONFIG.apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            guests: count,
+            attendance: attendance,
+            wishes: wishes
+          })
         });
 
-        const result = await response.json();
-
-        if (!response.ok || !result.success) {
-            throw new Error(
-                result.message || "Could not send request."
-            );
+        if (response.ok) {
+          help.textContent = '✅ Your RSVP has been sent successfully! Thank you.';
+          help.style.color = '#275647'; // Green
+          document.getElementById('rsvpForm').reset();
+        } else {
+          throw new Error('Failed to send');
         }
+      } catch (error) {
+        help.textContent = '❌ Error sending RSVP. Please try again.';
+        help.style.color = '#bd634f'; // Red
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    });
 
-        status.className = "success";
-        status.textContent = "✓ " + result.message;
+    // Hide organizer note once a real venue is set.
+    if (WEDDING_CONFIG.venue !== 'Venue to be announced') document.getElementById('setupNote').hidden = true;
 
-        form.reset();
+    // Add to calendar (.ics download).
+    document.getElementById('addCal').addEventListener('click', () => {
+      const f = d => d.toISOString().replace(/[-:]|\.\d{3}/g, '');
+      const start = new Date(WEDDING_CONFIG.date), end = new Date(start.getTime() + 4 * 36e5);
+      const esc = t => t.replace(/([,;])/g, '\\$1');
+      const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Wedding Invitation//EN','BEGIN:VEVENT','UID:wedding-' + start.getTime() + '@invitation',
+        'DTSTAMP:' + f(new Date()),'DTSTART:' + f(start),'DTEND:' + f(end),'SUMMARY:Wedding of រតនា & ពៅរដ្ឋា',
+        'LOCATION:' + esc(WEDDING_CONFIG.venue + ', ' + WEDDING_CONFIG.address),'END:VEVENT','END:VCALENDAR'].join('\r\n');
+      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'})); a.download = 'wedding.ics'; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    });
 
-    } catch (error) {
-        status.className = "error";
-        status.textContent =
-            error.message || "Network error. Please try again.";
-    } finally {
-        button.disabled = false;
-        button.textContent = "Send Request";
+    // Swipe left/right in the lightbox.
+    let touchX = null;
+    lightbox.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, {passive:true});
+    lightbox.addEventListener('touchend', e => {
+      if (touchX === null) return; const d = e.changedTouches[0].clientX - touchX; touchX = null;
+      if (Math.abs(d) > 50) showImage(selectedImage + (d < 0 ? 1 : -1));
+    });
+
+    // Gentle reveal on scroll.
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion:reduce)').matches) {
+      const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), {threshold:.12});
+      document.querySelectorAll('.section-heading,.info-card,.photo-frame,.story-copy,.gallery-grid button,.polaroid,.blessing-center,.rsvp-box,.count-grid').forEach(el => { el.classList.add('reveal'); io.observe(el); });
     }
-});
-</script>
 
+    // Scroll progress bar + countdown tick.
+    const bar = document.getElementById('progress'); let ticking = false;
+    addEventListener('scroll', () => { if (ticking) return; ticking = true; requestAnimationFrame(() => {
+      bar.style.transform = `scaleX(${scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight)})`; ticking = false; }); }, {passive:true});
+    ['days','hours','minutes','seconds'].forEach(id => { const el = document.getElementById(id);
+      new MutationObserver(() => { el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick'); }).observe(el, {childList:true}); });
+    document.querySelectorAll('.reveal').forEach(el => { el.style.transitionDelay = ([...el.parentNode.children].indexOf(el) % 3) * .12 + 's'; });
+  </script>
 </body>
 </html>
