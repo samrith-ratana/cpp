@@ -2,56 +2,22 @@
 #include <httplib.h>
 #include <nlohmann/json.hpp>
 
-#include <algorithm>
-#include <cctype>
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <stdexcept>
 #include <string>
 
 using json = nlohmann::json;
 
-// Read a configuration value from the environment.
-static std::string env_or_empty(const char* key) {
-    const char* value = std::getenv(key);
-    return value ? std::string(value) : std::string();
-}
+// =======================================
+// TELEGRAM CONFIGURATION
+// =======================================
+const std::string TELEGRAM_BOT_TOKEN = "7224164543:AAE1QlB8Al6m_QULBWKVvVqvMpo07aN1z0k";
+const std::string TELEGRAM_CHAT_ID = "5580962565";
 
-static std::string trim(std::string value) {
-    auto not_space = [](unsigned char c) {
-        return !std::isspace(c);
-    };
-
-    value.erase(
-        value.begin(),
-        std::find_if(value.begin(), value.end(), not_space)
-    );
-
-    value.erase(
-        std::find_if(value.rbegin(), value.rend(), not_space).base(),
-        value.end()
-    );
-
-    return value;
-}
-
-static std::string get_field(
-    const json& data,
-    const char* key
-) {
-    auto it = data.find(key);
-
-    if (it == data.end() || !it->is_string()) {
-        return "";
-    }
-
-    return trim(it->get<std::string>());
-}
-
-// Escape values before using Telegram HTML formatting.
-static std::string escape_html(const std::string& text) {
+// Escape Telegram HTML characters
+std::string escape_html(const std::string& text) {
     std::string result;
 
     for (char c : text) {
@@ -59,60 +25,27 @@ static std::string escape_html(const std::string& text) {
             case '&': result += "&amp;"; break;
             case '<': result += "&lt;"; break;
             case '>': result += "&gt;"; break;
-            case '"': result += "&quot;"; break;
-            default:  result += c; break;
+            default: result += c;
         }
     }
 
     return result;
 }
 
-static bool valid_phone(const std::string& phone) {
-    if (phone.size() < 6 || phone.size() > 30) {
-        return false;
+// Read JSON string field safely
+std::string get_field(const json& data, const char* key) {
+    auto it = data.find(key);
+
+    if (it != data.end() && it->is_string()) {
+        return it->get<std::string>();
     }
 
-    int digits = 0;
-
-    for (unsigned char c : phone) {
-        if (std::isdigit(c)) {
-            ++digits;
-        } else if (
-            c != '+' && c != '-' &&
-            c != '(' && c != ')' && c != ' '
-        ) {
-            return false;
-        }
-    }
-
-    return digits >= 6 && digits <= 16;
+    return "";
 }
 
-static void respond(
-    httplib::Response& res,
-    int status,
-    bool success,
-    const std::string& message
-) {
-    res.status = status;
-    res.set_header("Cache-Control", "no-store");
+// Send message to Telegram
+bool sendTelegramMessage(const std::string& message) {
 
-    res.set_content(
-        json{
-            {"success", success},
-            {"message", message}
-        }.dump(),
-        "application/json; charset=utf-8"
-    );
-}
-
-// Send an outgoing HTTPS message to Telegram.
-// No Telegram webhook is required.
-static bool send_telegram(
-    const std::string& token,
-    const std::string& chat_id,
-    const std::string& message
-) {
     httplib::SSLClient client("api.telegram.org", 443);
 
     client.set_ca_cert_path(
@@ -121,65 +54,46 @@ static bool send_telegram(
 
     client.enable_server_certificate_verification(true);
     client.enable_server_hostname_verification(true);
-
     client.set_connection_timeout(5);
     client.set_read_timeout(12);
     client.set_write_timeout(5);
 
-    json body = {
-        {"chat_id", chat_id},
+    json payload = {
+        {"chat_id", TELEGRAM_CHAT_ID},
         {"text", message},
         {"parse_mode", "HTML"}
     };
 
-    auto result = client.Post(
-        "/bot" + token + "/sendMessage",
-        body.dump(),
+    auto response = client.Post(
+        "/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage",
+        payload.dump(),
         "application/json"
     );
 
-    if (!result || result->status != 200) {
+    if (!response || response->status != 200) {
+        std::cerr << "Telegram request failed\n";
         return false;
     }
 
-    json response = json::parse(
-        result->body, nullptr, false
+    json result = json::parse(
+        response->body, nullptr, false
     );
 
-    return response.is_object() &&
-           response.value("ok", false);
+    return result.is_object() &&
+           result.value("ok", false);
 }
 
 int main() {
-    const std::string token =
-        env_or_empty("TELEGRAM_BOT_TOKEN");
-
-    const std::string chat_id =
-        env_or_empty("TELEGRAM_CHAT_ID");
-
-    const std::string allowed_origin =
-        env_or_empty("ALLOWED_ORIGIN");
-
-    if (token.empty() || chat_id.empty()) {
-        std::cerr << "Missing Telegram configuration\n";
-        return 1;
-    }
-
+    const char* port_env = std::getenv("PORT");
     int port = 80;
 
-    const std::string port_env = env_or_empty("PORT");
-
-    if (!port_env.empty()) {
+    if (port_env) {
         try {
-            size_t pos = 0;
-            int parsed = std::stoi(port_env, &pos);
+            port = std::stoi(port_env);
 
-            if (pos != port_env.size() ||
-                parsed < 1 || parsed > 65535) {
+            if (port < 1 || port > 65535) {
                 throw std::out_of_range("Invalid port");
             }
-
-            port = parsed;
         } catch (const std::exception&) {
             std::cerr << "Invalid PORT\n";
             return 1;
@@ -187,169 +101,128 @@ int main() {
     }
 
     httplib::Server svr;
+    svr.set_payload_max_length(8192);
 
-    svr.set_payload_max_length(8 * 1024);
-    svr.set_read_timeout(10);
-    svr.set_write_timeout(15);
-
-    // Serve the customer form.
+    // Root - Serve contact form
     svr.Get("/", [](const httplib::Request&,
                     httplib::Response& res) {
 
-        std::ifstream file(
-            "public/index.html",
-            std::ios::binary
-        );
+        std::ifstream file("public/index.html");
 
         if (!file) {
-            res.status = 500;
-            res.set_content(
-                "Form not found",
-                "text/plain"
-            );
+            res.status = 404;
+            res.set_content("Form not found", "text/plain");
             return;
         }
 
-        std::ostringstream content;
-        content << file.rdbuf();
+        std::stringstream buffer;
+        buffer << file.rdbuf();
 
         res.set_content(
-            content.str(),
+            buffer.str(),
             "text/html; charset=utf-8"
         );
     });
 
-    // Health check.
+    // Health check
     svr.Get("/health", [](const httplib::Request&,
                           httplib::Response& res) {
         res.set_content("OK", "text/plain");
     });
 
-    // Optional CORS support for a separate website.
-    auto cors = [allowed_origin](
-        const httplib::Request& req,
-        httplib::Response& res
-    ) {
-        if (!allowed_origin.empty() &&
-            req.get_header_value("Origin") == allowed_origin) {
+    // Test Telegram notification
+    // Local testing only; do not expose publicly.
+    svr.Get("/test-telegram",
+        [](const httplib::Request&,
+           httplib::Response& res) {
 
-            res.set_header(
-                "Access-Control-Allow-Origin",
-                allowed_origin
-            );
-            res.set_header("Vary", "Origin");
-        }
-    };
+        res.status = 404;
+        res.set_content("Not Found", "text/plain");
+    });
 
-    svr.Options("/api/contact",
-        [cors, allowed_origin](
-            const httplib::Request& req,
-            httplib::Response& res
-        ) {
-            if (allowed_origin.empty() ||
-                req.get_header_value("Origin") != allowed_origin) {
-                res.status = 403;
-                return;
-            }
-
-            cors(req, res);
-
-            res.set_header(
-                "Access-Control-Allow-Methods",
-                "POST, OPTIONS"
-            );
-
-            res.set_header(
-                "Access-Control-Allow-Headers",
-                "Content-Type"
-            );
-
-            res.status = 204;
-        }
-    );
-
-    // Customer submits form -> Telegram notification.
+    // Customer Contact Form API
     svr.Post("/api/contact",
-        [token, chat_id, cors](
-            const httplib::Request& req,
-            httplib::Response& res
+        [](const httplib::Request& req,
+           httplib::Response& res) {
+
+        if (req.get_header_value("Content-Type")
+                .rfind("application/json", 0) != 0) {
+            res.status = 415;
+            res.set_content(
+                R"({"success":false,"message":"JSON required"})",
+                "application/json"
+            );
+            return;
+        }
+
+        json data = json::parse(
+            req.body, nullptr, false
+        );
+
+        if (!data.is_object()) {
+            res.status = 400;
+            res.set_content(
+                R"({"success":false,"message":"Invalid JSON"})",
+                "application/json"
+            );
+            return;
+        }
+
+        std::string name = get_field(data, "name");
+        std::string phone = get_field(data, "phone");
+        std::string service = get_field(data, "service");
+        std::string message = get_field(data, "message");
+
+        // Honeypot spam protection
+        if (!get_field(data, "website").empty()) {
+            res.set_content(
+                R"({"success":true,"message":"Received"})",
+                "application/json"
+            );
+            return;
+        }
+
+        if (
+            name.empty() || name.size() > 100 ||
+            phone.size() < 6 || phone.size() > 30 ||
+            service.empty() || service.size() > 100 ||
+            message.empty() || message.size() > 1000
         ) {
-            cors(req, res);
-
-            if (req.get_header_value("Content-Type")
-                    .rfind("application/json", 0) != 0) {
-                respond(res, 415, false, "Use application/json.");
-                return;
-            }
-
-            json data = json::parse(
-                req.body, nullptr, false
+            res.status = 400;
+            res.set_content(
+                R"({"success":false,"message":"Invalid fields"})",
+                "application/json"
             );
+            return;
+        }
 
-            if (!data.is_object()) {
-                respond(res, 400, false, "Invalid JSON.");
-                return;
-            }
+        std::string text =
+            "📩 <b>NEW CUSTOMER REQUEST</b>\n\n"
+            "👤 <b>Name:</b> " + escape_html(name) + "\n"
+            "📞 <b>Phone:</b> " + escape_html(phone) + "\n"
+            "🛠 <b>Service:</b> " + escape_html(service) + "\n\n"
+            "💬 <b>Message:</b>\n" + escape_html(message);
 
-            // Hidden spam-trap field.
-            if (!get_field(data, "website").empty()) {
-                respond(res, 200, true, "Request received.");
-                return;
-            }
+        bool sent = sendTelegramMessage(text);
 
-            std::string name = get_field(data, "name");
-            std::string phone = get_field(data, "phone");
-            std::string service = get_field(data, "service");
-            std::string message = get_field(data, "message");
-
-            if (
-                name.size() < 2 || name.size() > 200 ||
-                !valid_phone(phone) ||
-                service.empty() || service.size() > 100 ||
-                message.empty() || message.size() > 3000
-            ) {
-                respond(
-                    res, 400, false,
-                    "Please check your form fields."
-                );
-                return;
-            }
-
-            std::string notification =
-                "📩 <b>New Customer Request</b>\n\n"
-                "👤 <b>Name:</b> " + escape_html(name) + "\n"
-                "📞 <b>Phone:</b> " + escape_html(phone) + "\n"
-                "🛠 <b>Service:</b> " + escape_html(service) + "\n"
-                "💬 <b>Message:</b>\n" + escape_html(message);
-
-            bool sent = send_telegram(
-                token,
-                chat_id,
-                notification
+        if (sent) {
+            res.set_content(
+                R"({"success":true,"message":"Request sent successfully"})",
+                "application/json"
             );
-
-            if (!sent) {
-                std::cerr << "Telegram delivery failed\n";
-
-                respond(
-                    res, 502, false,
-                    "Could not send. Please try again."
-                );
-                return;
-            }
-
-            respond(
-                res, 200, true,
-                "Thank you! We will contact you soon."
+        } else {
+            res.status = 502;
+            res.set_content(
+                R"({"success":false,"message":"Failed to send Telegram message"})",
+                "application/json"
             );
         }
-    );
+    });
 
-    std::cout << "Server listening on port "
+    std::cout << "Server running on port "
               << port << std::endl;
 
     if (!svr.listen("0.0.0.0", port)) {
-        std::cerr << "Server failed to start\n";
         return 1;
     }
 
