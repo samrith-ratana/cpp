@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Customer Service Request</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #f8fafc;
+    color: #182231;
+    margin: 0;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 32px;
+    border: 1px solid #e6ebf1;
+    border-radius: 24px;
+    box-shadow: 0 16px 52px rgba(29,40,58,.06);
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0 0 10px;
+}
+
+p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin: 18px 0 8px;
+}
+
+input, select, textarea {
+    width: 100%;
+    border: 1px solid #d8e0e9;
+    border-radius: 12px;
+    padding: 13px;
+    font: inherit;
+    background: white;
+    color: #182231;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #3982e8;
+    box-shadow: 0 0 0 3px rgba(57,130,232,.13);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 115px;
+}
+
+button {
+    margin-top: 22px;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    border-radius: 12px;
+    background: #1863ca;
+    color: white;
+    font-weight: 700;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+#status {
+    min-height: 22px;
+    margin-top: 16px;
+}
+
+.success { color: #157347; }
+.error { color: #b42318; }
+
+.hidden-field {
+    position: absolute;
+    left: -10000px;
+    height: 1px;
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+    <h1>Contact Us</h1>
+    <p>សូមបំពេញព័ត៌មានរបស់អ្នក ដើម្បីឱ្យយើងខ្ញុំទាក់ទងទៅវិញ។</p>
+
+    <form id="contactForm">
+
+        <label for="name">Name · ឈ្មោះ</label>
+        <input
+            id="name"
+            name="name"
+            type="text"
+            maxlength="100"
+            autocomplete="name"
+            placeholder="Your name"
+            required
+        >
+
+        <label for="phone">Phone · លេខទូរស័ព្ទ</label>
+        <input
+            id="phone"
+            name="phone"
+            type="tel"
+            maxlength="30"
+            autocomplete="tel"
+            placeholder="012 345 678"
+            required
+        >
+
+        <label for="service">Service · សេវាកម្ម</label>
+        <select id="service" name="service" required>
+            <option value="">Choose a service</option>
+            <option value="Home Internet">Home Internet</option>
+            <option value="Business Internet">Business Internet</option>
+            <option value="WiFi Installation">WiFi Installation</option>
+            <option value="CCTV Installation">CCTV Installation</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="message">Message · ព័ត៌មានបន្ថែម</label>
+        <textarea
+            id="message"
+            name="message"
+            maxlength="1000"
+            placeholder="Tell us what you need..."
+            required
+        ></textarea>
+
+        <!-- Spam-trap field: human users leave this empty -->
+        <div class="hidden-field" aria-hidden="true">
+            <label for="website">Leave empty</label>
+            <input
+                type="text"
+                id="website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+            >
+        </div>
+
+        <button type="submit" id="submitBtn">
+            Send Request
+        </button>
+
+        <p id="status" role="status" aria-live="polite"></p>
+    </form>
+</main>
+
+<script>
+const form = document.getElementById("contactForm");
+const button = document.getElementById("submitBtn");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+    status.textContent = "";
+    status.className = "";
+
+    const fields = new FormData(form);
+    const data = Object.fromEntries(fields.entries());
+
+    try {
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+            throw new Error(
+                result.message || "Could not send request."
+            );
+        }
+
+        status.className = "success";
+        status.textContent = "✓ " + result.message;
+
+        form.reset();
+
+    } catch (error) {
+        status.className = "error";
+        status.textContent =
+            error.message || "Network error. Please try again.";
+    } finally {
+        button.disabled = false;
+        button.textContent = "Send Request";
+    }
+});
+</script>
+
+</body>
+</html>
